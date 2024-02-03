@@ -1,0 +1,17 @@
+Installation of kubernetes in ubuntu on aws
+
+sudo apt-get update 
+sudo apt-get install docker.io -y 
+sudo systemctl enable docker 
+sudo systemctl start docker 
+sudo usermod -aG docker ubuntu && newgrp docker
+curl -LO https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
+curl -LO https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+kubectl version
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+minikube start –-driver=docker
+minikube kubectl -- get po -A
+
+enable port 8080 and 6443 in aws instance security 
