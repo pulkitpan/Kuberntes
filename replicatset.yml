@@ -18,3 +18,10 @@ spec:
   selectors:
     matchLabels:
       app: myapp
+
+      # to create a replicaset
+      -->kubectl create -f filename.yml
+      # to list replicaset
+      -->kubectl get replicaset
+      # to scale the pod
+      -->kubectl scale replicaset my-replicaset --replicas=6
