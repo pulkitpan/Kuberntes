@@ -12,9 +12,9 @@ spec:
         app: myapp
     spec:
       containers:
-        - name: nginx-con
+        - name: nginx-container
           image: nginx
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
       app: myapp
@@ -25,3 +25,5 @@ spec:
       -->kubectl get replicaset
       # to scale the pod
       -->kubectl scale replicaset my-replicaset --replicas=6
+      #kubectl delete pod my-replicaset-9wzh9
+      #kubectl describe replicaset my-replicaset
