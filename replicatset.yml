@@ -15,7 +15,7 @@ spec:
         - name: nginx-con
           image: nginx
   replicas: 4
-  selectors:
+  selector:
     matchLabels:
       app: myapp
 
