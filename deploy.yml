@@ -21,3 +21,18 @@ spec:
     matchLabels:
       app: myapp
       type: front-end
+
+      # to create a deployment
+      -->kubectl create -f filename.yml
+      # to list deployment
+      -->kubectl get deployment
+      # to apply a deployment
+      -->kubectl apply -f filename.yml
+     # kubectl describe deployment my-deployment
+     # to rollout deployment
+     -->kubectl rollout status deployment/my-deployment
+     #to rollout histroy of deployment
+     -->kubectl rollout status deployment/my-deployment
+     #to update the image of contianer in deployment
+     -->kubectl set image deployment/my-deployment nginx-container=nginx:perl
+      
